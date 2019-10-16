@@ -6,11 +6,15 @@
     "http-proxy-middleware": "^0.20.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4"
   },
   "scripts": {
     "start": "PORT=5001 react-scripts start",
     "build": "react-scripts build",
+    "compile:sass": "node-sass src/styles/main.scss public/css/main.css -w",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -28,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0"
   }
 }
