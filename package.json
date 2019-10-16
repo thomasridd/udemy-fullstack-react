@@ -11,9 +11,10 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "compile:sass": "npm run compile:sass --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run compile:sass\" ",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run compile:sass && npm run build --prefix client"
+    "dev:sass": "npm run compile:sass --prefix client",
+    "build:sass": "node-sass client/src/styles/main.scss client/public/css/main.css -w",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run dev:sass\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build:sass && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "node-sass": "^4.12.0"
   }
 }
